@@ -1,0 +1,66 @@
+.registration-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#regForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#regForm input, #regForm select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#regForm input:focus, #regForm select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.2);
+}
+
+#regForm button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#regForm button:hover {
+    background-color: #0056b3;
+}
+
+/* Ավատարի դաշտի ոճը */
+#avatar {
+    font-size: 14px;
+    background: #f8f9fa;
+    cursor: pointer;
+}
+
+/* Հաղորդագրությունների հատվածը */
+#message {
+    text-align: center;
+    font-weight: 500;
+    min-height: 20px;
+}
+
+/* Error-ների համար */
+.error-text {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: -10px;
+}

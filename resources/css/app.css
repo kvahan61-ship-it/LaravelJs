@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.main-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.search-bar input {
+    background: #f0f2f5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    width: 250px;
+    outline: none;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #444;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.user-menu img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-menu span {
+    font-weight: 500;
+    color: #333;
+}
+
+.login-btn {
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+}

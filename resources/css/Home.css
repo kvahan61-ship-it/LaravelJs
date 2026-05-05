@@ -1,0 +1,76 @@
+body {
+    background-color: #f0f2f5;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.simple-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+/* Գրառման դաշտը */
+.post-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.post-box textarea {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    resize: none;
+    height: 60px;
+    outline: none;
+    font-size: 16px;
+}
+
+.post-box-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Գրառման տեսքը */
+.simple-post {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.post-user {
+    margin-bottom: 10px;
+}
+
+.post-user strong {
+    color: #1c1e21;
+}
+
+.post-user span {
+    color: #65676b;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.post-body {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #1c1e21;
+}
