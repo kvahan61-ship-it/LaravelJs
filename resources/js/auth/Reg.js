@@ -12,14 +12,12 @@ document.getElementById('regForm').addEventListener('submit', function(e) {
         },
         body: formData
     })
-        .then(response => response.json()) // Այս տողը պարտադիր է JSON-ը կարդալու համար
+        .then(response => response.json())
         .then(res => {
             if (res.errors) {
-                // Եթե կան վալիդացիայի սխալներ
                 msgDiv.style.color = 'red';
                 msgDiv.innerText = Object.values(res.errors).flat().join(' ');
             } else if (res.redirect) {
-                // Եթե ամեն ինչ լավ է և ստացել ենք redirect հասցեն Controller-ից
                 window.location.href = res.redirect;
             } else {
                 // Հաջողության հաղորդագրություն, եթե redirect-ը չկա

@@ -1,0 +1,163 @@
+/* resources/css/post/create.css */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fafafa;
+    min-height: calc(100vh - 80px);
+}
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-header h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #262626;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8e8e8e;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #a8a8a8;
+    outline: none;
+}
+
+/* Error Styles */
+.error-border {
+    border-color: #ed4956 !important;
+}
+
+.error-text {
+    color: #ed4956;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* File Upload Custom Design */
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    border: 2px dashed #dbdbdb;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.file-upload-wrapper:hover {
+    background-color: #f0f0f0;
+}
+
+.file-upload-wrapper input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #0095f6;
+}
+
+.upload-icon {
+    font-size: 30px;
+}
+
+.upload-text {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Preview Image Area */
+#image-preview-container {
+    margin-top: 10px;
+    display: none; /* JS-ով կդարձնենք block */
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+}
+
+#image-preview-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-submit {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-submit:hover {
+    opacity: 0.8;
+}
+
+.btn-cancel {
+    text-decoration: none;
+    color: #262626;
+    font-size: 14px;
+    font-weight: 600;
+}

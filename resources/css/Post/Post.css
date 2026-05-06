@@ -1,0 +1,142 @@
+/* resources/css/Post/Post.css */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+
+/* Կատեգորիայի պիտակը */
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 149, 246, 0.9);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    z-index: 1;
+}
+
+.product-image-link {
+    width: 100%;
+    height: 220px;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.product-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image-link img {
+    transform: scale(1.08);
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+/* Հիմնական կոճակը */
+.add-to-cart-btn-primary {
+    width: 100%;
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-to-cart-btn-primary:hover {
+    background: #218838;
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+}
+/* Նկարների արտաքին բլոկը */
+.product-image-wrapper {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+/* Բուն կոնտեյները, որը scroll է լինելու */
+.image-scroll-container {
+    display: flex; /* Նկարները դասավորում ենք իրար կողք */
+    overflow-x: auto; /* Ավելացնում ենք հորիզոնական scroll */
+    scroll-snap-type: x mandatory; /* Ստիպում է նկարին «կպչել» եզրին սահեցնելուց հետո */
+    scrollbar-width: none; /* Թաքցնում ենք scrollbar-ը Firefox-ում */
+    -ms-overflow-style: none; /* Թաքցնում ենք scrollbar-ը IE-ում */
+}
+
+/* Թաքցնում ենք scrollbar-ը Chrome/Safari-ում */
+.image-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Նկարների դիզայնը */
+.scroll-img {
+    flex: 0 0 100%; /* Յուրաքանչյուր նկար զբաղեցնում է քարտի 100% լայնությունը */
+    width: 100%;
+    height: 200px; /* Կարող ես փոխել ըստ ցանկության */
+    object-fit: cover;
+    scroll-snap-align: start; /* Նկարը կպչում է սկզբնամասին */
+}
