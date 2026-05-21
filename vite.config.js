@@ -21,7 +21,8 @@ export default defineConfig({
                 'resources/js/post-actions.js',
                 'resources/js/post/post-delete.js',
                 'resources/js/post/carusel.js',
-                'resources/js/Cart/cart-create.js'
+                'resources/js/Cart/cart-create.js',
+                'resources/js/Cart/cart.js'
 
             ],
             refresh: true,

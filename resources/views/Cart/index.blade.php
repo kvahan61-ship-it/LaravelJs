@@ -14,7 +14,8 @@
                         @include('Cart.item', [
                             'post' => $item->post,
                             'count' => $item->count,
-                            'isCart' => true
+                            'isCart' => true,
+                            'cartItemId' => $item->id,
                         ])
                     @endforeach
                 </div>
@@ -56,6 +57,8 @@
         .checkout-btn:hover { background: #0056b3; transform: translateY(-2px); }
         .cart-layout { flex-direction: row; }
 
-       \\
     </style>
 @endsection
+@push('scripts')
+    @vite('resources/js/Cart/cart.js');
+@endpush

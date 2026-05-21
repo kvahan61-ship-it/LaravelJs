@@ -9,12 +9,20 @@
     </div>
 
     @if(isset($isCart))
-        <div class="item-quantity" style="display: flex; align-items: center; gap: 10px;">
-            <button class="qty-btn update-qty" data-action="decrease">-</button>
-            <span style="font-weight: bold; min-width: 20px; text-align: center;">{{ $count }}</span>
-            <button class="qty-btn update-qty" data-action="increase">+</button>
+        <div class="quantity-selector" style="display: flex; align-items: center; gap: 15px; margin-bottom: 0;">
+            <span style="font-size: 16px; color: #7f8c8d; font-weight: bold;">Քանակ՝</span>
+            <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #f8f9fa;">
+
+                <button type="button" class="quantity-btn cart-qty-btn minus" data-id="{{ $cartItemId }}" style="background: none; border: none; padding: 10px 15px; font-size: 18px; cursor: pointer; font-weight: bold; color: #555;">-</button>
+
+                <input type="number" class="cart-qty-input" value="{{ $count }}" min="1" readonly style="width: 50px; text-align: center; border: none; background: transparent; font-size: 16px; font-weight: bold; -moz-appearance: textfield;">
+
+                <button type="button" class="quantity-btn cart-qty-btn plus" data-id="{{ $cartItemId }}" style="background: none; border: none; padding: 10px 15px; font-size: 18px; cursor: pointer; font-weight: bold; color: #555;">+</button>
+
+            </div>
         </div>
-        <div class="item-total" style="flex: 1; text-align: right; font-weight: bold; color: #2ecc71;">
+
+        <div class="item-total row-total" style="flex: 1; text-align: right; font-weight: bold; color: #2ecc71;">
             {{ number_format($post->price * $count, 0, '.', ' ') }} ֏
         </div>
     @endif

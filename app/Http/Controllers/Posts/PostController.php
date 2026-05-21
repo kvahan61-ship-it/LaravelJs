@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Posts;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
     public function index() { abort(404);}
-    public function show(Post $post) { abort(404); }
     public function edit(Post $post) { abort(404); }
 
     public function create()
@@ -58,5 +59,33 @@ class PostController extends Controller
         }
 
         return redirect()->route('post.index');
+    }
+
+    public function show($id)
+    {
+        $post = Post::with('images', 'category')->findOrFail($id);
+
+        $ip = request()->ip();
+        $userId = auth()->id();
+
+        $alreadyViewed = DB::table('post_views')
+            ->where('post_id', $post->id)
+            ->where('ip_address', $ip)
+            ->where('created_at', '>', Carbon::now()->subHour())
+            ->exists();
+
+        if (!$alreadyViewed) {
+            DB::table('post_views')->insert([
+                'user_id' => $userId,
+                'post_id' => $post->id,
+                'ip_address' => $ip,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
+
+        $viewsCount = DB::table('post_views')->where('post_id', $post->id)->count();
+
+        return view('posts.show', compact('post', 'viewsCount'));
     }
 }

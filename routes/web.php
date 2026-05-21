@@ -30,8 +30,8 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/posts/{post}', [PostController::class, 'update'])->name('post.update');
     Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('post.delete');
 
-    Route::post('/posts/{post}/like', [PostController::class, 'like'])->name('post.like');
     Route::post('/posts/{post}/save', [PostController::class, 'save'])->name('post.save');
+    Route::get('/products/{id}', [PostController::class, 'show'])->name('post.show');
 
     Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add/{postId}', [CartController::class, 'store'])->name('cart.add');

@@ -123,8 +123,8 @@
     display: flex; /* Նկարները դասավորում ենք իրար կողք */
     overflow-x: auto; /* Ավելացնում ենք հորիզոնական scroll */
     scroll-snap-type: x mandatory; /* Ստիպում է նկարին «կպչել» եզրին սահեցնելուց հետո */
-    scrollbar-width: none; /* Թաքցնում ենք scrollbar-ը Firefox-ում */
-    -ms-overflow-style: none; /* Թաքցնում ենք scrollbar-ը IE-ում */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 /* Թաքցնում ենք scrollbar-ը Chrome/Safari-ում */
@@ -139,4 +139,7 @@
     height: 200px; /* Կարող ես փոխել ըստ ցանկության */
     object-fit: cover;
     scroll-snap-align: start; /* Նկարը կպչում է սկզբնամասին */
+}
+.single-image-scroll::-webkit-scrollbar {
+    display: none;
 }
