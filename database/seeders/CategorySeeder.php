@@ -14,8 +14,10 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
 
-        Category::create(['name' => 'Էլեկտրոնիկա']);
-        Category::create(['name' => 'Կենցաղային տեխնիկա']);
+        Category::create(['name' => 'Հեռախոսներ']);
+        Category::create(['name' => 'Լապտոպներ']);
+        Category::create(['name' => 'Ժամացույցներ']);
+
     }
 
 }

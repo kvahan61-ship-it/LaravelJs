@@ -25,6 +25,7 @@ class PostController extends Controller
             'title' => 'required',
             'price' => 'required|numeric',
             'category_id' => 'required|exists:categories,id',
+            'description' => 'required',
             'images' => 'required|array|min:1',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
@@ -32,6 +33,7 @@ class PostController extends Controller
         $post = new Post();
         $post->user_id = auth()->id();
         $post->title = $request->title;
+        $post->description=$request->description;
         $post->price = $request->price;
         $post->category_id = $request->category_id;
         $post->save();

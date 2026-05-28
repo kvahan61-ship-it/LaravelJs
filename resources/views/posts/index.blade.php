@@ -6,7 +6,15 @@
                 @if($post->images->count() > 0)
                     <div class="image-scroll-container">
                         @foreach($post->images as $image)
-                            <img src="{{ asset('storage/' . $image->path) }}" alt="{{ $post->title }}" class="scroll-img">
+                            @if(str_starts_with($image->path, 'demo-'))
+                                @php
+                                    $pureName = str_replace('demo-', '', $image->path);
+                                @endphp
+                                <img src="{{ asset('images/products/' . $pureName) }}" alt="{{ $post->title }}" class="scroll-img" title="{{ $post->description ?? 'Նկարագրություն առկա չէ։' }}">
+                            @else
+                                {{-- Եթե յուզերի իրական ավելացրածն է՝ կարդում ենք storage-ից --}}
+                                <img src="{{ asset('storage/' . $image->path) }}" alt="{{ $post->title }}" class="scroll-img" title="{{ $post->description ?? 'Նկարագրություն առկա չէ։' }}">
+                            @endif
                         @endforeach
                     </div>
                 @else

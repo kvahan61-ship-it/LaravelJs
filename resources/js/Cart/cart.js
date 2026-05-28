@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.cart-qty-btn').forEach(button => {
         button.addEventListener('click', async function() {
             const row = this.closest('.cart-item-row');
-            const cartItemId = this.dataset.id; // Վերցնում է data-id-ն
+            const cartItemId = this.dataset.id;
             const action = this.classList.contains('plus') ? 'increase' : 'decrease';
             const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 

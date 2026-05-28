@@ -15,9 +15,14 @@
         <div class="header-container">
             <a href="{{ route('home') }}" class="logo">MySocial</a>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Որոնել ապրանքներ...">
-            </div>
+            <form action="{{ route('home') }}" method="GET" class="search-bar">
+                @if(request('category_id'))
+                    <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+                @endif
+
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Որոնել ապրանքներ..." style="width: 100%; padding: 8px 15px; border: 1px solid #ddd; border-radius: 20px; outline: none;">
+                <button type="submit" style="display: none;">Որոնել</button>
+            </form>
 
             <nav class="header-nav">
                 @can('access-admin-panel')

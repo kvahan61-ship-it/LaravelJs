@@ -25,7 +25,7 @@
                     <select name="category_id" id="category_id" class="@error('category_id') error-border @enderror">
                         <option value="" disabled selected>Ընտրեք կատեգորիան</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                         @endforeach
                     </select>
                     @error('category_id')
@@ -37,6 +37,14 @@
                     <label for="price">Գին (֏)</label>
                     <input type="number" name="price" id="price" step="0.01" class="@error('price') error-border @enderror" value="{{ old('price') }}" placeholder="Մուտքագրեք գինը">
                     @error('price')
+                    <span class="error-text">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Ապրանքի նկարագրություն</label>
+                    <textarea name="description" id="description" rows="4" class="@error('description') error-border @enderror" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; resize: vertical;" placeholder="Մանրամասն պատմեք ապրանքի մասին...">{{ old('description') }}</textarea>
+                    @error('description')
                     <span class="error-text">{{ $message }}</span>
                     @enderror
                 </div>

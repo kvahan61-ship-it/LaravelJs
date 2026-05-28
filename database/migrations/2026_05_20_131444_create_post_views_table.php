@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('post_views', function (Blueprint $table) {
             $table->id();
-            // Ո՞վ է նայել (nullable է, եթե հյուրերն էլ են նայում)
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
-            // Ո՞ր պոստն է նայել
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
-            // Օգտատիրոջ IP հասցեն (որպեսզի նույն մարդուն անընդհատ չհաշվի)
             $table->string('ip_address');
             $table->timestamps();
         });

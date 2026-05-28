@@ -68,3 +68,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const imageWrapper = document.querySelector('.single-image-wrapper');
+    const imageOverlay = document.querySelector('.product-image-overlay');
+
+    if (imageWrapper && imageOverlay) {
+        imageWrapper.addEventListener('mouseenter', function () {
+            imageOverlay.classList.add('active');
+        });
+
+        imageWrapper.addEventListener('mouseleave', function () {
+            imageOverlay.classList.remove('active');
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const track = document.getElementById('showCarouselTrack');
+    const counter = document.getElementById('showCarouselCounter');
+    const prevBtn = document.getElementById('prevShowBtn');
+    const nextBtn = document.getElementById('nextShowBtn');
+
+    // Ստուգում ենք՝ արդյոք էջում կան այս տարրերը (որ ուրիշ էջերում սխալ չտա)
+    if (track) {
+        const images = track.querySelectorAll('img');
+        const totalImages = images.length;
+        let currentIndex = 0;
+
+        if (totalImages > 1 && prevBtn && nextBtn) {
+
+            // Աջ կոճակի սեղմում
+            nextBtn.addEventListener('click', function () {
+                currentIndex++;
+                if (currentIndex >= totalImages) {
+                    currentIndex = 0;
+                }
+                updateCarouselLayout();
+            });
+
+            // Ձախ կոճակի սեղմում
+            prevBtn.addEventListener('click', function () {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = totalImages - 1;
+                }
+                updateCarouselLayout();
+            });
+        }
+
+
+        function updateCarouselLayout() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            if (counter) {
+                counter.textContent = `${currentIndex + 1} / ${totalImages}`;
+            }
+        }
+    }
+});
