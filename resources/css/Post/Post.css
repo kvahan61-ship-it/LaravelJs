@@ -1,4 +1,3 @@
-/* resources/css/Post/Post.css */
 
 .shop-grid {
     display: grid;
@@ -23,7 +22,6 @@
     transform: translateY(-5px);
 }
 
-/* Կատեգորիայի պիտակը */
 .product-badge {
     position: absolute;
     top: 10px;
@@ -83,7 +81,6 @@
     color: #2c3e50;
 }
 
-/* Հիմնական կոճակը */
 .add-to-cart-btn-primary {
     width: 100%;
     background: #28a745;
@@ -111,68 +108,61 @@
     font-size: 20px;
     color: #999;
 }
-/* Նկարների արտաքին բլոկը */
 .product-image-wrapper {
     width: 100%;
     position: relative;
     border-bottom: 1px solid #eee;
 }
 
-/* Բուն կոնտեյները, որը scroll է լինելու */
 .image-scroll-container {
-    display: flex; /* Նկարները դասավորում ենք իրար կողք */
-    overflow-x: auto; /* Ավելացնում ենք հորիզոնական scroll */
-    scroll-snap-type: x mandatory; /* Ստիպում է նկարին «կպչել» եզրին սահեցնելուց հետո */
-    scrollbar-width: auto; /* Թաքցնում ենք scrollbar-ը Firefox-ում */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: auto;
     -ms-overflow-style: none;
 }
 
 
-/* Նկարների դիզայնը */
 .scroll-img {
-    flex: 0 0 100%; /* Յուրաքանչյուր նկար զբաղեցնում է քարտի 100% լայնությունը */
+    flex: 0 0 100%;
     width: 100%;
-    height: 200px; /* Կարող ես փոխել ըստ ցանկության */
+    height: 200px;
     object-fit: cover;
-    scroll-snap-align: start; /* Նկարը կպչում է սկզբնամասին */
+    scroll-snap-align: start;
 }
 .single-image-scroll::-webkit-scrollbar {
     display: none;
 }
-/* Շոու էջի նկարի պատյանը */
 .product-gallery .single-image-wrapper {
     position: relative !important;
     overflow: hidden !important;
 }
 
-/* Խոշոր overlay նկարագրության համար */
 .product-image-overlay {
     position: absolute !important;
     bottom: -100% !important;
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    background: rgba(0, 0, 0, 0.75) !important; /* Թափանցիկ մուգ ֆոն */
-    backdrop-filter: blur(4px); /* Սիրուն հետևի ֆոնը մի քիչ blur է անում */
+    background: rgba(0, 0, 0, 0.75) !important;
+    backdrop-filter: blur(4px);
     color: #fff !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     text-align: center !important;
     padding: 30px !important;
-    font-size: 18px !important; /* Ավելի խոշոր տեքստ */
+    font-size: 18px !important;
     font-weight: 500 !important;
     line-height: 1.6 !important;
     box-sizing: border-box !important;
-    transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important; /* Էլ ավելի սահուն անիմացիա */
-    pointer-events: none; /* Որ չխանգարի նկարները սահեցնելուն (scroll) */
+    transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    pointer-events: none;
 }
 
-/* Երբ մկնիկը պահում ենք նկարի պատյանի վրա */
 .product-gallery .single-image-wrapper:hover .product-image-overlay {
     bottom: 0 !important;
 }
-/* Շոու էջի նկարի հիմնական պատյանը */
 .single-image-wrapper {
     width: 100%;
     border-radius: 16px;
@@ -183,7 +173,6 @@
     cursor: pointer;
 }
 
-/* Խոշոր overlay նկարագրության համար */
 .product-image-overlay {
     position: absolute;
     top: 0;
@@ -205,37 +194,34 @@
     box-sizing: border-box;
     z-index: 99;
 
-    /* Սկզբից լրիվ թաքցնում ենք անիմացիայի համար */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-/* Այս դասը կավելացնենք JS-ով, որպեսզի սիրուն հայտնվի */
 .product-image-overlay.active {
     opacity: 1;
     visibility: visible;
 }
-/* Google Images-ի նման ներքևից ծագող շերտ */
 .single-image-wrapper {
     position: relative !important;
     width: 100%;
     border-radius: 16px;
-    overflow: hidden !important; /* Որպեսզի տեքստը սկզբում նկարից դուրս թաքնվի */
+    overflow: hidden !important;
     cursor: pointer;
 }
 
 .product-description-bar {
     position: absolute !important;
-    bottom: -100% !important; /* Սկզբում լրիվ թաքնված է ներքևում */
+    bottom: -100% !important;
     left: 0 !important;
     width: 100% !important;
-    background: rgba(0, 0, 0, 0.75) !important; /* Կիսաթափանցիկ սև */
+    background: rgba(0, 0, 0, 0.75) !important;
     color: #fff !important;
     padding: 15px 20px !important;
     box-sizing: border-box !important;
-    transition: bottom 0.3s ease-in-out !important; /* Սահուն անիմացիա */
-    z-index: 99 !important; /* Որպեսզի հաստատ նկարի վրայով գա */
+    transition: bottom 0.3s ease-in-out !important;
+    z-index: 99 !important;
     pointer-events: none;
 }
 
@@ -245,13 +231,9 @@
     line-height: 1.5 !important;
 }
 
-/* Մկնիկը պահելիս (Hover) բարձրացնել 0 դիրքի (նկարի ստորին եզրին) */
 .single-image-wrapper:hover .product-description-bar {
     bottom: 0 !important;
 }
-/* ==========================================================================
-   Product Show Page - Carousel & Google Images Hover Style
-   ========================================================================== */
 
 .single-image-wrapper {
     position: relative !important;
@@ -263,7 +245,6 @@
     cursor: pointer;
 }
 
-/* Կարուսելի տրեկը */
 .show-carousel-track {
     display: flex;
     width: 100%;
@@ -277,10 +258,9 @@
     object-fit: cover;
 }
 
-/* Կառավարման կոճակներ */
-/* Կառավարման կոճակների ընդհանուր ստիլերը */
+
 .carousel-nav-btn {
-    position: absolute !important; /* Ստիպում ենք, որ մնա նկարի վրա */
+    position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
     background: rgba(0, 0, 0, 0.5) !important;
@@ -299,17 +279,14 @@
     transition: background 0.2s, transform 0.2s !important;
 }
 
-/* 🛑 ՁԱԽ ԿՈՃԱԿԸ ԴՆՈՒՄ ԵՆՔ ՁԱԽ ԿՈՂՄՈՒՄ */
 #prevShowBtn {
     left: 15px !important;
 }
 
-/* 🛑 ԱՋ ԿՈՃԱԿԸ ԴՆՈՒՄ ԵՆՔ ԱՋ ԿՈՂՄՈՒՄ */
 #nextShowBtn {
     right: 15px !important;
 }
 
-/* Hover էֆեկտը */
 .carousel-nav-btn:hover {
     background: rgba(0, 0, 0, 0.8) !important;
     transform: translateY(-50%) scale(1.1) !important;
@@ -319,7 +296,6 @@
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Հաշվիչի բլոկը */
 #showCarouselCounter {
     position: absolute;
     top: 15px;
@@ -333,7 +309,6 @@
     z-index: 15;
 }
 
-/* Google Images-ի ոճի նկարագրության բարը */
 .product-description-bar {
     position: absolute !important;
     bottom: -100% !important;
@@ -354,7 +329,6 @@
     line-height: 1.5 !important;
 }
 
-/* Hover էֆեկտը՝ նկարագրությունը բարձրանում է ներքևից */
 .single-image-wrapper:hover .product-description-bar {
     bottom: 0 !important;
 }

@@ -46,12 +46,12 @@
 
                 <a href="#" class="nav-link">🔔</a>
 
-                <div class="user-menu" style="display: flex; align-items: center; gap: 8px;">
+                <a href="{{route('profile.index')}}" class="user-menu" style="display: flex; align-items: center; gap: 8px;">
                     <img src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/default-avatar.png') }}"
                          alt="Profile"
                          style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid #ddd;">
                     <span style="font-size: 14px; font-weight: 500;">{{ auth()->user()->name }}</span>
-                </div>
+                </a>
 
                 <form action="{{ route('logout') }}" method="POST" style="display: inline; margin-left: 10px;">
                     @csrf

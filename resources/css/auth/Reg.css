@@ -58,27 +58,23 @@
     background-color: #0056b3;
 }
 
-/* Ավատարի դաշտի ոճը */
 #avatar {
     font-size: 14px;
     background: #f8f9fa;
     cursor: pointer;
 }
 
-/* Հաղորդագրությունների հատվածը */
 #message {
     text-align: center;
     font-weight: 500;
     min-height: 20px;
 }
 
-/* Error-ների համար */
 .error-text {
     color: #dc3545;
     font-size: 13px;
     margin-top: -10px;
 }
-/* resources/css/auth/Reg.css */
 
 .registration-container {
     display: flex;
@@ -102,7 +98,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Avatar-ի դիզայնը */
 #avatar {
     margin-bottom: 10px;
 }
@@ -126,7 +121,6 @@
     object-fit: cover;
 }
 
-/* Input-ների դիզայնը */
 #regForm input,
 #regForm select {
     width: 100%;
@@ -144,7 +138,6 @@
     outline: none;
 }
 
-/* Կոճակ */
 #regForm button {
     background-color: #0095f6;
     color: white;
@@ -162,7 +155,6 @@
     background-color: #1877f2;
 }
 
-/* Login հղումը ներքևում */
 .registration-container a {
     margin-top: 20px;
     color: #0095f6;

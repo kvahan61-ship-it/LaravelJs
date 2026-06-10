@@ -37,10 +37,13 @@
                         <div class="product-price-row">
                             <span class="price">{{ number_format($post->price, 0, '.', ' ') }} ֏</span>
                         </div>
+                        <form action="{{ route('cart.add', $post->id) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="add-to-cart-btn-primary" data-id="{{ $post->id }}">
+                                <i class="fa fa-shopping-cart"></i> Ավելացնել զամբյուղ
+                            </button>
+                        </form>
 
-                        <button class="add-to-cart-btn-primary" data-id="{{ $post->id }}">
-                            <i class="fa fa-shopping-cart"></i> Ավելացնել զամբյուղ
-                        </button>
                     </div>
                 </div>
             @empty

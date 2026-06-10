@@ -20,7 +20,6 @@ document.getElementById('regForm').addEventListener('submit', function(e) {
             } else if (res.redirect) {
                 window.location.href = res.redirect;
             } else {
-                // Հաջողության հաղորդագրություն, եթե redirect-ը չկա
                 msgDiv.style.color = 'green';
                 msgDiv.innerText = res.message || 'Գրանցումը հաջողվեց:';
                 this.reset();

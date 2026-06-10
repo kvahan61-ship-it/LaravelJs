@@ -1,32 +1,54 @@
-@extends('layouts.layout')
+@extends('layouts.main')
 
-@section('main')
-    <div class="form-container">
-        <form action="{{ route('post.update', $post->id) }}" method="POST" enctype="multipart/form-data" class="edit-post-form">
+@push('styles')
+    @vite('resources/css/post/Edit.css')
+@endpush
+
+@section('content')
+    <div class="edit-post-container">
+
+        <h2 class="edit-post-title">
+            ✏️ Խմբագրել Հայտարարությունը
+        </h2>
+
+        <form action="{{ route('posts.update', $post->id) }}" method="POST">
             @csrf
-            @method('patch')
+            @method('PUT')
 
-            <div>
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" value="{{ $post->title }}">
+            <div class="form-group">
+                <label class="form-label">Վերնագիր</label>
+                <input type="text" name="title" value="{{ old('title', $post->title) }}" class="form-input" required>
             </div>
 
-            <div>
-                <label for="image">Image</label>
-                <input type="file" name="image" id="image">
-                @if($post->image)
-                    <div class="current-image">
-                        <p>Ընթացիկ նկարը:</p>
-                        <img src="{{ asset('storage/' . $post->image) }}" width="100">
-                    </div>
-                @endif
+            <div class="form-group">
+                <label class="form-label">Կատեգորիա</label>
+                <select name="category_id" class="form-select" required>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}" {{ $post->category_id == $category->id ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
-            <button type="submit">Update</button>
+            <div class="form-group">
+                <label class="form-label">Գին (֏)</label>
+                <input type="number" name="price" value="{{ old('price', $post->price) }}" class="form-input" required>
+            </div>
+
+            <div class="form-group last">
+                <label class="form-label">Նկարագրություն</label>
+                <textarea name="description" rows="6" class="form-textarea" required>{{ old('description', $post->description) }}</textarea>
+            </div>
+
+            <div class="btn-group">
+                <a href="{{ route('profile.index') }}" class="btn-cancel">
+                    Չեղարկել
+                </a>
+                <button type="submit" class="btn-submit">
+                    💾 Պահպանել Թարմացումները
+                </button>
+            </div>
         </form>
     </div>
-
-    @push('scripts')
-        @vite(['resources/js/post-edit.js'])
-    @endpush
 @endsection

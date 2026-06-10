@@ -18,6 +18,7 @@ class Post extends Model
         'price',
         'description',
         'user_id',
+        "is_published",
     ];
 
 

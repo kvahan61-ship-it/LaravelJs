@@ -38,42 +38,49 @@ class PostSeeder extends Seeder
                 'category_id' => $phoneId,
                 'description' => '256GB, անթերի աշխատանք, գերժամանակակից էկրան և S-Pen գրիչ։',
                 'images' => ['S26Ultra.jpeg', 'S26Ultra2.jpeg', 'S26Ultra3.jpeg'],
-                'price' => '513900դր'
+                'price' => '513900դր',
+                'is_published' => 1,
             ],
             [
                 'title' => 'iPhone 17 Pro Max',
                 'category_id' => $phoneId,
                 'description' => 'Նորագույն մոդել, իդեալական կատարելություն, տրվում է պաշտոնական երաշխիք։',
                 'images' => ['17promax.jpeg', '17promax2.jpeg', '17promax3.jpeg'],
-                'price' => '599000դր'
+                'price' => '599000դր',
+                'is_published' => 1,
+
             ],
             [
                 'title' => 'MacBook Pro',
                 'category_id' => $laptopId,
                 'description' => 'Հզորագույն պրոցեսոր, ծրագրավորման և ծանր գրաֆիկական աշխատանքների համար։',
                 'images' => ['macbookpro.jpeg', 'macbookpro2.jpeg'],
-                'price' => '1024900դր'
+                'price' => '1024900դր',
+                'is_published' => 1,
             ],
             [
                 'title' => 'Samsung Galaxy Book',
                 'category_id' => $laptopId,
                 'description' => 'Թեթև, բարակ և շատ արագագործ նոթբուք ամենօրյա աշխատանքի համար։',
                 'images' => ['SamsungBook1.jpeg', 'SamsungBook2.jpeg'],
-                'price' => '799000դր'
+                'price' => '799000դր',
+                'is_published' => 1,
             ],
             [
                 'title' => 'Apple Watch Ultra',
                 'category_id' => $watchId,
                 'description' => 'Սպորտային, դիմացկուն և սմարթ ֆունկցիաներով լեցուն ժամացույց։',
                 'images' => ['applewatch1.jpeg', 'applewatch2.jpeg'],
-                'price' => '442900դր'
+                'price' => '442900դր',
+                'is_published' => 1,
             ],
             [
                 'title' => 'Smart Watch',
                 'category_id' => $watchId,
                 'description' => 'Ոճային խելացի ժամացույց, հետևում է առողջությանը և ծանուցումներին։',
                 'images' => ['watch.jpeg', 'watch2.jpeg'],
-                'price' => '139000դր'
+                'price' => '139000դր',
+                'is_published' => 1,
             ]
         ];
 
@@ -84,7 +91,8 @@ class PostSeeder extends Seeder
                 'title'       => $prod['title'],
                 'category_id' => $prod['category_id'],
                 'price'       => $prod['price'],
-                'description' => $prod['description']
+                'description' => $prod['description'],
+                'is_published' => $prod['is_published'],
             ]);
 
             foreach ($prod['images'] as $imgName) {

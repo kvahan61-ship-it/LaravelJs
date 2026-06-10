@@ -5,19 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-
 class HomeController extends Controller
 {
-
     public function index(Request $request)
     {
         $query = Post::with(['images', 'category']);
 
+        $query->where('is_published', 1);
 
         if ($request->filled('category_id')) {
             $query->where('category_id', $request->category_id);
         }
-
 
         if ($request->filled('search')) {
             $search = $request->search;

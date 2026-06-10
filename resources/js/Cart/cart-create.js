@@ -89,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const prevBtn = document.getElementById('prevShowBtn');
     const nextBtn = document.getElementById('nextShowBtn');
 
-    // Ստուգում ենք՝ արդյոք էջում կան այս տարրերը (որ ուրիշ էջերում սխալ չտա)
     if (track) {
         const images = track.querySelectorAll('img');
         const totalImages = images.length;
@@ -97,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (totalImages > 1 && prevBtn && nextBtn) {
 
-            // Աջ կոճակի սեղմում
             nextBtn.addEventListener('click', function () {
                 currentIndex++;
                 if (currentIndex >= totalImages) {
@@ -106,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateCarouselLayout();
             });
 
-            // Ձախ կոճակի սեղմում
             prevBtn.addEventListener('click', function () {
                 currentIndex--;
                 if (currentIndex < 0) {
