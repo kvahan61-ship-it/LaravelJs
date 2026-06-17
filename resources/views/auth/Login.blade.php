@@ -17,6 +17,9 @@
         <div class="register-link-card">
             <p>Չունե՞ք հաշիվ: <a href="{{ route('register') }}">Գրանցվել</a></p>
         </div>
+        <div>
+            <a href="{{ route('password.request') }}">Մոռացե՞լ եք գաղտնաբառը</a>
+        </div>
     </div>
 @endsection
 @push('scripts')

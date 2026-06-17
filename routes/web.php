@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\auth\ForgotPasswordController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\HomeController;
@@ -10,12 +11,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
 
+
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
-    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+    Route::post('/register/send-code', [RegisterController::class, 'sendVerificationCode'])->name('register.sendCode');
+    Route::post('/register/verify', [RegisterController::class, 'verifyAndRegister'])->name('register.verify');
+
+    Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+    Route::post('/forgot-password/send-code', [ForgotPasswordController::class, 'sendResetCode'])->name('password.sendCode');
+    Route::post('/forgot-password/reset', [ForgotPasswordController::class, 'resetPassword'])->name('password.update');
+
 });
 
 

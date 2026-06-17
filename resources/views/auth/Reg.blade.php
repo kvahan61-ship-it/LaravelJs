@@ -4,7 +4,7 @@
  @endpush
  @section('content')
      <div class="registration-container">
-         <form id="regForm" action="{{ route('register.store') }}" enctype="multipart/form-data" method="post">
+         <form id="regForm" action="{{ route('register.sendCode') }}" enctype="multipart/form-data" method="post">
              @csrf
 
              <h2 style="text-align: center; color: #262626;">Ստեղծել հաշիվ</h2>
