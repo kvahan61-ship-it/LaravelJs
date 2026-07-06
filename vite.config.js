@@ -15,7 +15,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/auth/Login.js',
                 'resources/js/auth/Reg.js',
-                'resources/js/auth.js',
+                'resources/js/auth/auth.js',
                 'resources/js/post/post-create.js',
                 'resources/js/post-edit.js',
                 'resources/js/post-actions.js',
